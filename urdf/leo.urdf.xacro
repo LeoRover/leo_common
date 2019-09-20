@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"
+       name="leo_description">
+  
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://leo_description/meshes/base_link.STL"/>
+      </geometry>
+      <material name="base">
+        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://leo_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <xacro:macro name="wheel_link" params="name model"> 
+    <link name="wheel_${name}_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://leo_description/meshes/wheel_${model}.STL"/>
+        </geometry>
+        <material name="wheel">
+          <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1"/>
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://leo_description/meshes/wheel_${model}.STL"/>
+        </geometry>
+      </collision>
+    </link>
+  </xacro:macro>
+
+  <xacro:wheel_link name="FL" model="left"/>
+  <xacro:wheel_link name="FR" model="right"/>
+  <xacro:wheel_link name="RL" model="left"/>
+  <xacro:wheel_link name="RR" model="right"/>
+  
+  <joint name="wheel_FL_joint" type="continuous">
+    <origin xyz="0.14211 0.16833 -0.13136" rpy="${pi/2} 0 0"/>
+    <parent link="base_link"/>
+    <child link="wheel_FL_link"/>
+    <axis xyz="0 0 -1"/>
+  </joint>
+
+  <joint name="wheel_FR_joint" type="continuous">
+    <origin xyz="0.14211 -0.16026 -0.13136" rpy="${pi/2} 0 0"/>
+    <parent link="base_link"/>
+    <child link="wheel_FR_link"/>
+    <axis xyz="0 0 -1"/>
+  </joint>
+
+  <joint name="wheel_RL_joint" type="continuous">
+    <origin xyz="-0.14704 0.16833 -0.13136" rpy="${pi/2} 0 0"/>
+    <parent link="base_link"/>
+    <child link="wheel_RL_link"/>
+    <axis xyz="0 0 -1"/>
+  </joint>
+
+  <joint name="wheel_RR_joint" type="continuous">
+    <origin xyz="-0.14704 -0.16026 -0.13136" rpy="${pi/2} 0 0"/>
+    <parent link="base_link"/>
+    <child link="wheel_RR_link"/>
+    <axis xyz="0 0 -1"/>
+  </joint>
+
+</robot>
