@@ -1,14 +1,17 @@
 <launch>
-  <arg name="gui" default="false"/>
-  <arg name="model" default="$(find leo_description)/urdf/leo.urdf.xacro"/>
-  
-  <param name="robot_description" command="xacro --inorder $(arg model)" />
-  
-  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
-    <param name="use_gui" value="$(arg gui)"/>
-    <rosparam param="source_list">[joint_states]</rosparam>
-  </node>
-  
-  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher"/>
-  <node name="$(anon rviz)" pkg="rviz" type="rviz" args="-d $(find leo_description)/rviz/model.rviz" required="true"/>
+
+    <arg name="gui" default="true" />
+    <arg name="model" default="$(find leo_description)/urdf/leo.urdf.xacro"/>
+
+    <param name="robot_description" command="$(find xacro)/xacro --inorder $(arg model)" />
+
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" output="screen">
+        <param name="use_gui" value="$(arg gui)" />
+        <param name="publish_default_efforts" value="true" />
+    </node>
+
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" output="screen"/>
+
+    <include file="$(find leo_description)/launch/rviz.launch"/>
+
 </launch>

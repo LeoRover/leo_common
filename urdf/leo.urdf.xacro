@@ -6,18 +6,9 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://leo_description/meshes/base_link.STL"/>
+        <mesh filename="package://leo_description/models/base.dae"/>
       </geometry>
-      <material name="base">
-        <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1"/>
-      </material>
     </visual>
-    <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <mesh filename="package://leo_description/meshes/base_link.STL" />
-      </geometry>
-    </collision>
   </link>
 
   <xacro:macro name="wheel_link" params="name model"> 
@@ -25,18 +16,9 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://leo_description/meshes/wheel_${model}.STL"/>
+          <mesh filename="package://leo_description/models/wheel_${model}.dae"/>
         </geometry>
-        <material name="wheel">
-          <color rgba="0.752941176470588 0.752941176470588 0.752941176470588 1"/>
-        </material>
       </visual>
-      <collision>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
-        <geometry>
-          <mesh filename="package://leo_description/meshes/wheel_${model}.STL"/>
-        </geometry>
-      </collision>
     </link>
   </xacro:macro>
 
@@ -46,39 +28,39 @@
   <xacro:wheel_link name="RR" model="right"/>
   
   <joint name="wheel_FL_joint" type="continuous">
-    <origin xyz="0.14211 0.16833 -0.13136" rpy="${pi/2} 0 0"/>
+    <origin xyz="0.1472 0.1114 -0.1353" rpy="0 0 ${pi}"/>
     <parent link="base_link"/>
     <child link="wheel_FL_link"/>
-    <axis xyz="0 0 -1"/>
+    <axis xyz="0 -1 0"/>
   </joint>
 
   <joint name="wheel_FR_joint" type="continuous">
-    <origin xyz="0.14211 -0.16026 -0.13136" rpy="${pi/2} 0 0"/>
+    <origin xyz="0.1472 -0.1114 -0.1353" rpy="0 0 0"/>
     <parent link="base_link"/>
     <child link="wheel_FR_link"/>
-    <axis xyz="0 0 -1"/>
+    <axis xyz="0 1 0"/>
   </joint>
 
   <joint name="wheel_RL_joint" type="continuous">
-    <origin xyz="-0.14704 0.16833 -0.13136" rpy="${pi/2} 0 0"/>
+    <origin xyz="-0.1419 0.1114 -0.1353" rpy="0 0 ${pi}"/>
     <parent link="base_link"/>
     <child link="wheel_RL_link"/>
-    <axis xyz="0 0 -1"/>
+    <axis xyz="0 -1 0"/>
   </joint>
 
   <joint name="wheel_RR_joint" type="continuous">
-    <origin xyz="-0.14704 -0.16026 -0.13136" rpy="${pi/2} 0 0"/>
+    <origin xyz="-0.1419 -0.1114 -0.1353" rpy="0 0 0"/>
     <parent link="base_link"/>
     <child link="wheel_RR_link"/>
-    <axis xyz="0 0 -1"/>
+    <axis xyz="0 1 0"/>
   </joint>
 
-  <link name="camera_link"/>
+  <link name="camera_frame"/>
 
   <joint name="camera_joint" type="fixed">
-      <origin xyz="0.08 0 -0.04" rpy="${-pi/2 - 0.2} 0 ${-pi/2}"/>
+      <origin xyz="0.0971 0 -0.0427" rpy="${-pi/2 - 0.2094} 0 ${-pi/2}"/>
       <parent link="base_link"/>
-      <child link="camera_link"/>
+      <child link="camera_frame"/>
   </joint>
 
 </robot>

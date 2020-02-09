@@ -1,0 +1,4 @@
+<launch>
+    <arg name="rvizconfig" default="$(find leo_description)/rviz/model.rviz" />
+    <node name="$(anon rviz)" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" output="screen"/>
+</launch>
