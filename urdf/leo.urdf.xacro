@@ -12,13 +12,11 @@
       <inertia ixx="0.002956" ixy="-0.000001489324" ixz="-0.000008103407" iyy="0.02924" iyz="0.00007112" izz="0.02832"/>
     </inertial>
       <visual>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
           <mesh filename="package://leo_description/models/Rocker.dae"/>
         </geometry>
       </visual>
       <collision>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
           <mesh filename="package://leo_description/models/Rocker.dae"/>
         </geometry>
@@ -28,12 +26,22 @@
 
   <xacro:macro name="wheel_link" params="name model"> 
     <link name="wheel_${name}_link">
+      <inertial>
+        <mass value="0.283642"/>
+        <origin xyz="0 0.030026 0"/>
+        <inertia ixx="0.000391" ixy="0.00000123962" ixz="5.52582e-7" iyy="0.0004716" iyz="-0.000002082042" izz="0.000391"/>
+      </inertial>
       <visual>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
           <mesh filename="package://leo_description/models/Wheel${model}.dae"/>
         </geometry>
       </visual>
+      <collision>
+        <origin xyz="0 0.04485 0" rpy="${pi/2} 0 0"/>
+        <geometry>
+          <cylinder radius="0.06" length="0.07"/>
+        </geometry>
+      </collision>
     </link>
   </xacro:macro>
 
@@ -46,13 +54,11 @@
       <inertia ixx="0.01042" ixy="0.001177" ixz="-0.0008871" iyy="0.01045" iyz="0.0002226" izz="0.01817"/>
     </inertial>
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
         <mesh filename="package://leo_description/models/Chassis.dae"/>
       </geometry>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
         <mesh filename="package://leo_description/models/Chassis.dae"/>
       </geometry>
@@ -73,7 +79,6 @@
       <inertia ixx="2.5529e-7" ixy="0.0" ixz="0.0" iyy="2.5529e-7" iyz="0.0" izz="1.354e-8"/>
     </inertial>
     <visual>
-      <origin xyz="0 0 0"/>
       <geometry>
         <mesh filename="package://leo_description/models/Antenna.dae"/>
       </geometry>
@@ -95,7 +100,7 @@
     <parent link="base_link"/>
     <child link="rocker_L_link"/>
     <axis xyz="0 1 0"/>
-    <limit effort="10" lower="-0.3" upper="0.3" velocity="0.5"/> <!-- TODO -->
+    <limit effort="10" lower="-0.24" upper="0.24" velocity="0.5"/> <!-- TODO -->
   </joint>
 
   <joint name="rocker_R_joint" type="revolute">
@@ -103,7 +108,8 @@
     <parent link="base_link"/>
     <child link="rocker_R_link"/>
     <axis xyz="0 1 0"/>
-    <limit effort="10" lower="-0.3" upper="0.3" velocity="0.5"/> <!-- TODO -->
+    <limit effort="10" lower="-0.24" upper="0.24" velocity="0.5"/> <!-- TODO -->
+    <mimic joint="rocker_L_joint"/>
   </joint>
 
   <joint name="wheel_FL_joint" type="continuous">
