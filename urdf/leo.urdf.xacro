@@ -117,7 +117,7 @@
     <parent link="rocker_L_link"/>
     <child link="wheel_FL_link"/>
     <axis xyz="0 -1 0"/>
-    <limit effort="10" velocity="1.0"/> <!-- TODO -->
+    <limit effort="10" velocity="6.0"/> <!-- TODO -->
   </joint>
 
   <joint name="wheel_RL_joint" type="continuous">
@@ -125,7 +125,7 @@
     <parent link="rocker_L_link"/>
     <child link="wheel_RL_link"/>
     <axis xyz="0 -1 0"/>
-    <limit effort="10" velocity="1.0"/> <!-- TODO -->
+    <limit effort="10" velocity="6.0"/> <!-- TODO -->
   </joint>
 
   <joint name="wheel_FR_joint" type="continuous">
@@ -133,7 +133,7 @@
     <parent link="rocker_R_link"/>
     <child link="wheel_FR_link"/>
     <axis xyz="0 1 0"/>
-    <limit effort="10" velocity="1.0"/> <!-- TODO -->
+    <limit effort="10" velocity="6.0"/> <!-- TODO -->
   </joint>
 
   <joint name="wheel_RR_joint" type="continuous">
@@ -141,7 +141,7 @@
     <parent link="rocker_R_link"/>
     <child link="wheel_RR_link"/>
     <axis xyz="0 1 0"/>
-    <limit effort="10" velocity="1.0"/> <!-- TODO -->
+    <limit effort="10" velocity="6.0"/> <!-- TODO -->
   </joint>
 
   <joint name="antenna_joint" type="fixed">
