@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro"
        name="leo">
+
+  <xacro:arg name="default_antenna" default="true"/>
   
   <!-- MACROS -->
 
@@ -72,24 +74,26 @@
   <xacro:wheel_link name="FR" model="B"/>
   <xacro:wheel_link name="RR" model="B"/>
 
-  <link name="antenna_link">
-    <inertial>
-      <mass value="0.001237"/>
-      <origin xyz="0 0 0.028828"/>
-      <inertia ixx="2.5529e-7" ixy="0.0" ixz="0.0" iyy="2.5529e-7" iyz="0.0" izz="1.354e-8"/>
-    </inertial>
-    <visual>
-      <geometry>
-        <mesh filename="package://leo_description/models/Antenna.dae"/>
-      </geometry>
-    </visual>
-    <collision>
-      <origin xyz="0 0 0.028"/>
-      <geometry>
-        <cylinder radius="0.0055" length="0.056"/>
-      </geometry>
-    </collision>
-  </link>
+  <xacro:if value="$(arg default_antenna)">
+    <link name="antenna_link">
+      <inertial>
+        <mass value="0.001237"/>
+        <origin xyz="0 0 0.028828"/>
+        <inertia ixx="2.5529e-7" ixy="0.0" ixz="0.0" iyy="2.5529e-7" iyz="0.0" izz="1.354e-8"/>
+      </inertial>
+      <visual>
+        <geometry>
+          <mesh filename="package://leo_description/models/Antenna.dae"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0.028"/>
+        <geometry>
+          <cylinder radius="0.0055" length="0.056"/>
+        </geometry>
+      </collision>
+    </link>
+  </xacro:if>
 
   <link name="camera_frame"/>
 
@@ -144,11 +148,13 @@
     <limit effort="10" velocity="6.0"/> <!-- TODO -->
   </joint>
 
-  <joint name="antenna_joint" type="fixed">
-      <origin xyz="-0.0052 0.056 -0.0065" rpy="0 0 0"/>
-      <parent link="base_link"/>
-      <child link="antenna_link"/>
-  </joint>
+  <xacro:if value="$(arg default_antenna)">
+    <joint name="antenna_joint" type="fixed">
+        <origin xyz="-0.0052 0.056 -0.0065" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="antenna_link"/>
+    </joint>
+  </xacro:if>
 
   <joint name="camera_joint" type="fixed">
       <origin xyz="0.0971 0 -0.0427" rpy="${-pi/2 - 0.2094} 0 ${-pi/2}"/>
