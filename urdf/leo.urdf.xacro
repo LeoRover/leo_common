@@ -9,19 +9,19 @@
 
   <xacro:macro name="rocker_link" params="name">
     <link name="rocker_${name}_link">
-    <inertial>
-      <mass value="1.387336"/>
-      <origin xyz="0 0.01346 -0.06506"/>
-      <inertia ixx="0.002956" ixy="-0.000001489324" ixz="-0.000008103407" iyy="0.02924" iyz="0.00007112" izz="0.02832"/>
-    </inertial>
+      <inertial>
+        <mass value="1.387336"/>
+        <origin xyz="0 0.01346 -0.06506"/>
+        <inertia ixx="0.002956" ixy="-0.000001489324" ixz="-0.000008103407" iyy="0.02924" iyz="0.00007112" izz="0.02832"/>
+      </inertial>
       <visual>
         <geometry>
           <mesh filename="package://leo_description/models/Rocker.dae"/>
         </geometry>
       </visual>
-      <collision> <!-- TODO -->
+      <collision>
         <geometry>
-          <mesh filename="package://leo_description/models/Rocker.dae"/>
+          <mesh filename="package://leo_description/models/Rocker_outline.stl"/>
         </geometry>
       </collision>
     </link>
@@ -39,10 +39,15 @@
           <mesh filename="package://leo_description/models/Wheel${model}.dae"/>
         </geometry>
       </visual>
-      <collision> <!-- TODO -->
+      <collision>
         <origin xyz="0 0.04485 0" rpy="${pi/2} 0 0"/>
         <geometry>
-          <cylinder radius="0.06" length="0.07"/>
+          <cylinder radius="0.0625" length="0.07"/>
+        </geometry>
+      </collision>
+      <collision>
+        <geometry>
+          <mesh filename="package://leo_description/models/Wheel_outline.stl"/>
         </geometry>
       </collision>
     </link>
@@ -61,9 +66,9 @@
         <mesh filename="package://leo_description/models/Chassis.dae"/>
       </geometry>
     </visual>
-    <collision> <!-- TODO -->
+    <collision>
       <geometry>
-        <mesh filename="package://leo_description/models/Chassis.dae"/>
+        <mesh filename="package://leo_description/models/Chassis_outline.stl"/>
       </geometry>
     </collision>
   </link>
