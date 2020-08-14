@@ -2,8 +2,22 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro"
        name="leo">
 
+  <xacro:arg name="ros_control_namespace" default="leo"/>
+
+  <xacro:arg name="fixed" default="false"/>
   <xacro:arg name="default_antenna" default="true"/>
   <xacro:arg name="rockers_fixed" default="true"/>
+
+  <xacro:include filename="$(find leo_description)/urdf/leo.gazebo.xacro"/>
+
+  <xacro:if value="$(arg fixed)">
+    <link name="world"/>
+    <joint name="fixed" type="fixed">
+      <parent link="world"/>
+      <child link="base_link"/>
+      <origin xyz="0.0 0.0 2.0"/>
+    </joint>
+  </xacro:if>
 
   <!-- MACROS -->
 
@@ -188,5 +202,51 @@
       <parent link="base_link"/>
       <child link="base_footprint"/>
   </joint>
+
+  <!-- TRANSMISSIONS -->
+  
+  <transmission name="wheel_FL_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="wheel_FL_joint">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="wheel_FL_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="wheel_RL_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="wheel_RL_joint">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="wheel_RL_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="wheel_FR_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="wheel_FR_joint">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="wheel_FR_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="wheel_RR_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="wheel_RR_joint">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="wheel_RR_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
 
 </robot>
