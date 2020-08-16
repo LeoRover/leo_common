@@ -2,7 +2,7 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro"
        name="leo">
 
-  <xacro:arg name="ros_control_namespace" default="leo"/>
+  <xacro:arg name="robot_ns" default="leo"/>
 
   <xacro:arg name="fixed" default="false"/>
   <xacro:arg name="default_antenna" default="true"/>
@@ -26,7 +26,10 @@
       <inertial>
         <mass value="1.387336"/>
         <origin xyz="0 0.01346 -0.06506"/>
-        <inertia ixx="0.002956" ixy="-0.000001489324" ixz="-0.000008103407" iyy="0.02924" iyz="0.00007112" izz="0.02832"/>
+        <inertia
+          ixx="0.002956" ixy="-0.000001489324" ixz="-0.000008103407"
+          iyy="0.02924"  iyz="0.00007112"
+          izz="0.02832"/>
       </inertial>
       <visual>
         <geometry>
@@ -46,7 +49,10 @@
       <inertial>
         <mass value="0.283642"/>
         <origin xyz="0 0.030026 0"/>
-        <inertia ixx="0.000391" ixy="0.00000123962" ixz="5.52582e-7" iyy="0.0004716" iyz="-0.000002082042" izz="0.000391"/>
+        <inertia
+          ixx="0.000391"  ixy="0.00000123962" ixz="5.52582e-7"
+          iyy="0.0004716" iyz="-0.000002082042"
+          izz="0.000391"/>
       </inertial>
       <visual>
         <geometry>
@@ -73,7 +79,10 @@
     <inertial>
       <mass value="1.584994"/>
       <origin xyz="-0.019662 0.011643 -0.031802"/>
-      <inertia ixx="0.01042" ixy="0.001177" ixz="-0.0008871" iyy="0.01045" iyz="0.0002226" izz="0.01817"/>
+      <inertia
+        ixx="0.01042" ixy="0.001177" ixz="-0.0008871"
+        iyy="0.01045" iyz="0.0002226"
+        izz="0.01817"/>
     </inertial>
     <visual>
       <geometry>
@@ -101,7 +110,10 @@
       <inertial>
         <mass value="0.001237"/>
         <origin xyz="0 0 0.028828"/>
-        <inertia ixx="2.5529e-7" ixy="0.0" ixz="0.0" iyy="2.5529e-7" iyz="0.0" izz="1.354e-8"/>
+        <inertia
+          ixx="2.5529e-7" ixy="0.0" ixz="0.0"
+          iyy="2.5529e-7" iyz="0.0"
+          izz="1.354e-8"/>
       </inertial>
       <visual>
         <geometry>
