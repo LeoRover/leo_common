@@ -130,6 +130,7 @@
   </xacro:if>
 
   <link name="camera_frame"/>
+  <link name="camera_optical_frame"/>
 
   <!-- JOINTS -->
 
@@ -197,22 +198,28 @@
 
   <xacro:if value="$(arg default_antenna)">
     <joint name="antenna_joint" type="fixed">
-        <origin xyz="-0.0052 0.056 -0.0065" rpy="0 0 0"/>
-        <parent link="base_link"/>
-        <child link="antenna_link"/>
+      <origin xyz="-0.0052 0.056 -0.0065" rpy="0 0 0"/>
+      <parent link="base_link"/>
+      <child link="antenna_link"/>
     </joint>
   </xacro:if>
 
   <joint name="camera_joint" type="fixed">
-      <origin xyz="0.0971 0 -0.0427" rpy="${-pi/2 - 0.2094} 0 ${-pi/2}"/>
-      <parent link="base_link"/>
-      <child link="camera_frame"/>
+    <origin xyz="0.0971 0 -0.0427" rpy="0 0.2094 0"/>
+    <parent link="base_link"/>
+    <child link="camera_frame"/>
+  </joint>
+
+  <joint name="camera_optical_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="-${pi/2} 0.0 -${pi/2}"/>
+    <parent link="camera_frame"/>
+    <child link="camera_optical_frame"/>
   </joint>
 
   <joint name="footprint_joint" type="fixed">
-      <origin xyz="0 0 -0.19783" rpy="0 0 0"/>
-      <parent link="base_link"/>
-      <child link="base_footprint"/>
+    <origin xyz="0 0 -0.19783" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="base_footprint"/>
   </joint>
 
   <!-- TRANSMISSIONS -->
