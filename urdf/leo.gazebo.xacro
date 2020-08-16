@@ -9,6 +9,50 @@
     </plugin>
   </gazebo>
 
-
+  <!-- camera -->
+  <gazebo reference="camera_frame">
+    <sensor type="camera" name="leo_camera">
+      <always_on>true</always_on>
+      <update_rate>30.0</update_rate>
+      <visualize>false</visualize> 
+      <camera name="leo_camera">
+        <horizontal_fov>1.9</horizontal_fov>
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>300</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+        <distortion>
+          <k1>-0.279817</k1>
+          <k2>0.060321</k2>
+          <k3>0.000487</k3>
+          <p1>0.000310</p1>
+          <p2>0.000000</p2>
+          <center>0.5 0.5</center>
+        </distortion>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <robotNamespace>$(arg robot_ns)</robotNamespace>
+        <cameraName>camera</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>camera_optical_frame</frameName>
+        <distortionK1>-0.279817</distortionK1>
+        <distortionK2>0.060321</distortionK2>
+        <distortionK3>0.000487</distortionK3>
+        <distortionT1>0.000310</distortionT1>
+        <distortionT2>0.000000</distortionT2>
+      </plugin>
+    </sensor>
+  </gazebo>
 
 </robot>
