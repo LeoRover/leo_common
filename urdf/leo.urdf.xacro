@@ -15,7 +15,7 @@
     <joint name="fixed" type="fixed">
       <parent link="world"/>
       <child link="base_link"/>
-      <origin xyz="0.0 0.0 2.0"/>
+      <origin xyz="0.0 0.0 0"/>
     </joint>
   </xacro:if>
 
@@ -146,8 +146,8 @@
     <parent link="base_link"/>
     <child link="rocker_L_link"/>
     <axis xyz="0 1 0"/>
-    <limit effort="10" lower="-0.24" upper="0.24" velocity="0.5"/> <!-- TODO effort velocity -->
-    <dynamics friction="0.1" damping="0.1"/> <!-- TODO -->
+    <limit effort="100.0" lower="-0.24" upper="0.24" velocity="100.0"/>
+    <dynamics friction="1.0" damping="0.1"/>
   </joint>
 
   <joint name="rocker_R_joint" type="${rockers_joint_type}">
@@ -155,8 +155,8 @@
     <parent link="base_link"/>
     <child link="rocker_R_link"/>
     <axis xyz="0 1 0"/>
-    <limit effort="10" lower="-0.24" upper="0.24" velocity="0.5"/> <!-- TODO effort velocity -->
-    <dynamics friction="0.1" damping="0.1"/> <!-- TODO -->
+    <limit effort="100.0" lower="-0.24" upper="0.24" velocity="100.0"/>
+    <dynamics friction="1.0" damping="0.1"/> 
     <mimic joint="rocker_L_joint"/>
   </joint>
 
@@ -267,5 +267,23 @@
       <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
     </actuator>
   </transmission>
+
+  <xacro:unless value="$(arg rockers_fixed)">
+    <transmission name="rocker_L_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="rocker_L_joint">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="rocker_L_virtual_motor"/>
+    </transmission>
+
+    <transmission name="rocker_R_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="rocker_R_joint">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="rocker_R_virtual_motor"/>
+    </transmission>
+  </xacro:unless>
 
 </robot>

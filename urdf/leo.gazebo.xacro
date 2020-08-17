@@ -55,4 +55,14 @@
     </sensor>
   </gazebo>
 
+  <xacro:unless value="$(arg rockers_fixed)">
+    <gazebo>
+      <plugin name="rocker_differential" filename="libgazebo_differential_plugin.so">
+        <jointA>rocker_L_joint</jointA>
+        <jointB>rocker_R_joint</jointB>
+        <forceConstant>100.0</forceConstant>
+      </plugin>
+    </gazebo>
+  </xacro:unless>
+
 </robot>
