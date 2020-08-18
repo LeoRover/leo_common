@@ -165,7 +165,7 @@
     <parent link="rocker_L_link"/>
     <child link="wheel_FL_link"/>
     <axis xyz="0 -1 0"/>
-    <limit effort="5.0" velocity="6.0"/>
+    <limit effort="2.0" velocity="6.0"/>
     <dynamics friction="0.3125" damping="0.1"/>
   </joint>
 
@@ -174,7 +174,7 @@
     <parent link="rocker_L_link"/>
     <child link="wheel_RL_link"/>
     <axis xyz="0 -1 0"/>
-    <limit effort="5.0" velocity="6.0"/>
+    <limit effort="2.0" velocity="6.0"/>
     <dynamics friction="0.3125" damping="0.1"/>
   </joint>
 
@@ -183,7 +183,7 @@
     <parent link="rocker_R_link"/>
     <child link="wheel_FR_link"/>
     <axis xyz="0 1 0"/>
-    <limit effort="5.0" velocity="6.0"/>
+    <limit effort="2.0" velocity="6.0"/>
     <dynamics friction="0.3125" damping="0.1"/>
   </joint>
 
@@ -192,7 +192,7 @@
     <parent link="rocker_R_link"/>
     <child link="wheel_RR_link"/>
     <axis xyz="0 1 0"/>
-    <limit effort="5.0" velocity="6.0"/>
+    <limit effort="2.0" velocity="6.0"/>
     <dynamics friction="0.3125" damping="0.1"/> 
   </joint>
 
