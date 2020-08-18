@@ -9,6 +9,43 @@
     </plugin>
   </gazebo>
 
+  <!-- wheel ODE properties -->
+  <gazebo reference="wheel_FL_link">
+    <kp>1e6</kp>
+    <kd>1.0</kd>
+    <mu1>5.0</mu1>
+    <mu2>0.5</mu2>
+    <fdir1>1 0 0</fdir1>
+    <minDepth>0.003</minDepth>
+  </gazebo>
+
+  <gazebo reference="wheel_FR_link">
+    <kp>1e6</kp>
+    <kd>1.0</kd>
+    <mu1>5.0</mu1>
+    <mu2>0.5</mu2>
+    <fdir1>1 0 0</fdir1>
+    <minDepth>0.003</minDepth>
+  </gazebo>
+
+  <gazebo reference="wheel_RL_link">
+    <kp>1e6</kp>
+    <kd>1.0</kd>
+    <mu1>5.0</mu1>
+    <mu2>0.5</mu2>
+    <fdir1>1 0 0</fdir1>
+    <minDepth>0.003</minDepth>
+  </gazebo>
+
+  <gazebo reference="wheel_RR_link">
+    <kp>1e6</kp>
+    <kd>1.0</kd>
+    <mu1>5.0</mu1>
+    <mu2>0.5</mu2>
+    <fdir1>1 0 0</fdir1>
+    <minDepth>0.003</minDepth>
+  </gazebo>
+
   <!-- camera -->
   <gazebo reference="camera_frame">
     <sensor type="camera" name="leo_camera">
@@ -55,6 +92,7 @@
     </sensor>
   </gazebo>
 
+  <!-- rocker differential -->
   <xacro:unless value="$(arg rockers_fixed)">
     <gazebo>
       <plugin name="rocker_differential" filename="libgazebo_differential_plugin.so">
