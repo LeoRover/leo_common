@@ -10,6 +10,19 @@
   </gazebo>
 
   <!-- wheel ODE properties -->
+  <gazebo reference="rocker_L_link">
+    <kp>1e6</kp>
+    <kd>1.0</kd>
+    <minDepth>0.003</minDepth>
+  </gazebo>
+
+  <gazebo reference="rocker_R_link">
+    <kp>1e6</kp>
+    <kd>1.0</kd>
+    <minDepth>0.003</minDepth>
+  </gazebo>
+
+
   <gazebo reference="wheel_FL_link">
     <kp>1e6</kp>
     <kd>1.0</kd>
