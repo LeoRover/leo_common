@@ -26,7 +26,7 @@
   <gazebo reference="wheel_FL_link">
     <kp>1e6</kp>
     <kd>1.0</kd>
-    <mu1>5.0</mu1>
+    <mu1>3.0</mu1>
     <mu2>0.5</mu2>
     <fdir1>1 0 0</fdir1>
     <minDepth>0.003</minDepth>
@@ -35,7 +35,7 @@
   <gazebo reference="wheel_FR_link">
     <kp>1e6</kp>
     <kd>1.0</kd>
-    <mu1>5.0</mu1>
+    <mu1>3.0</mu1>
     <mu2>0.5</mu2>
     <fdir1>1 0 0</fdir1>
     <minDepth>0.003</minDepth>
@@ -44,7 +44,7 @@
   <gazebo reference="wheel_RL_link">
     <kp>1e6</kp>
     <kd>1.0</kd>
-    <mu1>5.0</mu1>
+    <mu1>3.0</mu1>
     <mu2>0.5</mu2>
     <fdir1>1 0 0</fdir1>
     <minDepth>0.003</minDepth>
@@ -53,7 +53,7 @@
   <gazebo reference="wheel_RR_link">
     <kp>1e6</kp>
     <kd>1.0</kd>
-    <mu1>5.0</mu1>
+    <mu1>3.0</mu1>
     <mu2>0.5</mu2>
     <fdir1>1 0 0</fdir1>
     <minDepth>0.003</minDepth>

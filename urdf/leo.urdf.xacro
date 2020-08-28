@@ -62,7 +62,13 @@
       <collision>
         <origin xyz="0 0.04485 0" rpy="${pi/2} 0 0"/>
         <geometry>
-          <cylinder radius="0.0625" length="0.07"/>
+          <cylinder radius="0.057" length="0.07"/>
+        </geometry>
+      </collision>
+      <collision>
+        <origin xyz="0 0.04485 0" rpy="${pi/2} 0 0"/>
+        <geometry>
+          <cylinder radius="0.0625" length="0.04"/>
         </geometry>
       </collision>
       <collision>
