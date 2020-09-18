@@ -6,7 +6,11 @@ find_package(catkin REQUIRED)
 
 catkin_package()
 
-foreach(dir models urdf)
-	install(DIRECTORY ${dir}/
-		DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
-endforeach(dir)
+install(DIRECTORY launch/
+    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch)
+
+install(DIRECTORY models/
+    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/models)
+
+install(DIRECTORY urdf/
+    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/urdf)
