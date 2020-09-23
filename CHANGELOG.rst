@@ -2,8 +2,8 @@
 Changelog for package leo_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.0 (2020-09-23)
+------------------
 * Added gazebo references
 * Added camera_optical_frame link which uses camera coordinate convention
 * Added launch files for publishing robot state
