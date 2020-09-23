@@ -2,6 +2,16 @@
 Changelog for package leo_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Added gazebo references
+* Added camera_optical_frame link which uses camera coordinate convention
+* Added launch files for publishing robot state
+* Added low-poly outline models for collision geometry
+* Added physical properties for all links and revolute joints
+* Added joints for rockers and antenna
+* Replaced meshes with more optimized ones
+
 0.3.0 (2020-06-01)
 ------------------
 * Moved the launch files and rviz configs to leo_viz package
