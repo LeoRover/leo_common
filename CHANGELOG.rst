@@ -4,15 +4,13 @@ Changelog for package leo_description
 
 0.3.0 (2020-06-01)
 ------------------
-* Move the launch files and rviz config to leo_viz package, remove dependencies
-* update dependencies
-* update deprecated joint state publisher gui functionality
+* Moved the launch files and rviz configs to leo_viz package
 
 0.2.0 (2020-02-12)
 ------------------
-* remove rviz dependency
-* fix install targets
-* new model initial
+* exported new, more up-to-date part models in COLLADA format
+* added rviz.launch file
+* changed camera link name to `camera_frame`
 
 0.1.0 (2019-10-02)
 ------------------
