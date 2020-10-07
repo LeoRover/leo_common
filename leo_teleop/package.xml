@@ -1,10 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>leo</name>
+  <name>leo_teleop</name>
   <version>1.0.1</version>
-  <description>
-    Metapackage of software for Leo Rover common to the robot and ROS desktop
-  </description>
+  <description>Teleop package for Leo Rover</description>
 
   <maintainer email="blazej@turtlerover.com">Błażej Sowa</maintainer>
   <author email="blazej@turtlerover.com">Błażej Sowa</author>
@@ -17,10 +15,7 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <exec_depend>leo_description</exec_depend>
-  <exec_depend>leo_teleop</exec_depend>
+  <exec_depend>joy</exec_depend>
+  <exec_depend>teleop_twist_joy</exec_depend>
 
-  <export>
-    <metapackage />
-  </export>
 </package>
