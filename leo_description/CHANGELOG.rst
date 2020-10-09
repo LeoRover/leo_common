@@ -2,8 +2,8 @@
 Changelog for package leo_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.1.0 (2020-10-09)
+------------------
 * Bump minimum cmake version to 3.0.2
 * Update package manifest
 
