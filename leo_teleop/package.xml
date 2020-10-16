@@ -2,7 +2,9 @@
 <package format="2">
   <name>leo_teleop</name>
   <version>1.1.0</version>
-  <description>Teleop package for Leo Rover</description>
+  <description>
+    Scripts and launch files for Leo Rover teleoperation
+  </description>
 
   <maintainer email="blazej@turtlerover.com">Błażej Sowa</maintainer>
   <author email="blazej@turtlerover.com">Błażej Sowa</author>
