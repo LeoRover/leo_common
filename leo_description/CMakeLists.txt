@@ -6,11 +6,10 @@ find_package(catkin REQUIRED)
 
 catkin_package()
 
-install(DIRECTORY launch/
-    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch)
-
-install(DIRECTORY models/
-    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/models)
-
-install(DIRECTORY urdf/
-    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/urdf)
+install(
+  DIRECTORY
+    launch
+    models
+    urdf
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)

@@ -6,15 +6,11 @@ find_package(catkin)
 catkin_package()
 
 install(
-  DIRECTORY launch/
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
+  DIRECTORY 
+    config
+    launch
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
-
-install(
-  DIRECTORY config/
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/config
-)
-
 install(
   PROGRAMS scripts/key_teleop
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}/scripts
