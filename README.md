@@ -4,7 +4,7 @@
 |:---|:---:|:---:|:---:|
 | **Released version:** | `1.1.0` | `1.1.0` | `1.1.0` |
 | **Development branch:** | `master` | `master` | `master` |
-| **Build status:** | [![Build Status](http://build.ros.org/job/Kdev__leo_common__ubuntu_xenial_amd64/badge/icon)](http://build.ros.org/job/Kdev__leo_common__ubuntu_xenial_amd64/) | [![Build Status Melodic](http://build.ros.org/job/Mdev__leo_common__ubuntu_bionic_amd64/badge/icon)](http://build.ros.org/job/Mdev__leo_common__ubuntu_bionic_amd64/) | [![Build Status](http://build.ros.org/job/Ndev__leo_common__ubuntu_focal_amd64/badge/icon)](http://build.ros.org/job/Ndev__leo_common__ubuntu_focal_amd64/)|
+| **Build status:** | [![Build Status](http://build.ros.org/job/Kdev__leo_common__ubuntu_xenial_amd64/badge/icon)](http://build.ros.org/job/Kdev__leo_common__ubuntu_xenial_amd64/) | [![Build Status Melodic](http://build.ros.org/job/Mdev__leo_common__ubuntu_bionic_amd64/badge/icon)](http://build.ros.org/job/Mdev__leo_common__ubuntu_bionic_amd64/) | [![Build Status](http://build.ros.org/job/Ndev__leo_common__ubuntu_focal_amd64/badge/icon)](http://build.ros.org/job/Ndev__leo_common__ubuntu_focal_amd64/) <br> [![Build Status](http://build.ros.org/job/Ndev_db__leo_common__debian_buster_amd64/badge/icon)](http://build.ros.org/job/Ndev_db__leo_common__debian_buster_amd64/)|
 
 Common ROS packages for Leo Rover that will work no matter on what machine they were run in the ROS network. Usable for both the real robot operation and the simulation.
 
