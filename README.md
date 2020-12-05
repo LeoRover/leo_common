@@ -13,9 +13,9 @@ Common ROS packages for Leo Rover that will work no matter on what machine they 
 * [leo_teleop] - Scripts for robot's teleoperation.
 
 Visit each package's ROS Wiki page for more information. \
-For more information about the robot, visit [Robots/LeoRover].
+For more information about the robot, visit [Robots/Leo Rover].
 
 [leo]: http://wiki.ros.org/leo
-[leo_description]: http://wiki.ros.org/leo_Description
+[leo_description]: http://wiki.ros.org/leo_description
 [leo_teleop]: http://wiki.ros.org/leo_teleop
-[Robots/LeoRover]: http://wiki.ros.org/Robots/LeoRover
+[Robots/Leo Rover]: http://wiki.ros.org/Robots/Leo%20Rover
