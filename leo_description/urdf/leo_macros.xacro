@@ -219,16 +219,27 @@
   <!-- LEO GAZEBO -->
 
   <xacro:macro name="leo_gazebo" 
-               params="default_antenna:=true robot_ns:=''">
+               params="default_antenna:=true 
+                       fixed:=false
+                       robot_ns:=''">
 
     <xacro:property name="link_prefix" value=""/>
-    <xacro:if value="${robot_ns != ''}">
+    <xacro:if value="${robot_ns != '' and robot_ns != '/'}">
       <xacro:property name="link_prefix" value="${robot_ns}/"/>
     </xacro:if>
 
     <xacro:leo default_antenna="${default_antenna}"
                rockers_fixed="false"
                link_prefix="${link_prefix}"/>
+
+    <xacro:if value="${fixed}">
+      <link name="world"/>
+      <joint name="fixed" type="fixed">
+        <parent link="world"/>
+        <child link="${link_prefix}base_footprint"/>
+        <origin xyz="0.0 0.0 0"/>
+      </joint>
+    </xacro:if>
 
     <!-- rocker ODE properties -->
     <gazebo reference="${link_prefix}rocker_L_link">
@@ -328,7 +339,7 @@
 
     <!-- rocker differential -->
     <gazebo>
-      <plugin name="rocker_differential" filename="libgazebo_differential_plugin.so">
+      <plugin name="rocker_differential" filename="libleo_gazebo_differential_plugin.so">
         <jointA>rocker_L_joint</jointA>
         <jointB>rocker_R_joint</jointB>
         <forceConstant>100.0</forceConstant>
