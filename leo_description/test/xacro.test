@@ -1,0 +1,4 @@
+<launch>
+  <param name="description1" command="xacro $(find leo_description)/urdf/leo.urdf.xacro"/>
+  <param name="description2" command="xacro $(find leo_description)/urdf/leo_sim.urdf.xacro"/>
+</launch>
