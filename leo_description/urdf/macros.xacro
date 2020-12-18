@@ -67,8 +67,9 @@
     </xacro:macro>
 
     <!-- LINKS -->
-
-    <link name="${link_prefix}base_footprint"/>
+    <xacro:if value="${footprint_link}">
+      <link name="${link_prefix}base_footprint"/>
+    </xacro:if>
 
     <link name="${link_prefix}base_link">
       <inertial>
@@ -127,11 +128,13 @@
 
     <!-- JOINTS -->
 
-    <joint name="${joint_prefix}base_joint" type="fixed">
-      <origin xyz="0 0 0.19783" rpy="0 0 0"/>
-      <parent link="${link_prefix}base_footprint"/>
-      <child link="${link_prefix}base_link"/>
-    </joint>
+    <xacro:if value="${footprint_link}">
+      <joint name="${joint_prefix}base_joint" type="fixed">
+        <origin xyz="0 0 0.19783" rpy="0 0 0"/>
+        <parent link="${link_prefix}base_footprint"/>
+        <child link="${link_prefix}base_link"/>
+      </joint>
+    </xacro:if>
 
     <xacro:if value="${rockers_fixed}">
       <xacro:property name="rockers_joint_type" value="fixed"/>
