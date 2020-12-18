@@ -8,6 +8,6 @@
   <xacro:include filename="$(find leo_description)/urdf/macros.xacro"/>
 
   <xacro:leo_sim robot_ns="$(arg robot_ns)"
-                 fixed="$(arg fixed)">
+                 fixed="$(arg fixed)"/>
 
 </robot>
