@@ -2,8 +2,8 @@
 Changelog for package leo_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.2.0 (2020-12-18)
+------------------
 * Add macros.xacro file which contains <leo/>, <leo_gazebo/> and <leo_sim/> xacro macros
 * Add simple xacro test
 * Change CMakeLists formatting style

@@ -2,8 +2,8 @@
 Changelog for package leo_teleop
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.2.0 (2020-12-18)
+------------------
 * Update package description
 * Change CMakeLists formatting style
 
