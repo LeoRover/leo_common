@@ -4,6 +4,7 @@
   <xacro:macro name="leo" 
                params="default_antenna:=true
                        rockers_fixed:=true
+                       footprint_link:=true
                        link_prefix:=''
                        joint_prefix:=''">
 
@@ -218,27 +219,12 @@
 
   <!-- LEO GAZEBO -->
 
-  <xacro:macro name="leo_gazebo" 
-               params="default_antenna:=true 
-                       fixed:=false
-                       robot_ns:=''">
+  <xacro:macro name="leo_gazebo"
+               params="robot_ns:=''">
 
     <xacro:property name="link_prefix" value=""/>
     <xacro:if value="${robot_ns != '' and robot_ns != '/'}">
       <xacro:property name="link_prefix" value="${robot_ns}/"/>
-    </xacro:if>
-
-    <xacro:leo default_antenna="${default_antenna}"
-               rockers_fixed="false"
-               link_prefix="${link_prefix}"/>
-
-    <xacro:if value="${fixed}">
-      <link name="world"/>
-      <joint name="fixed" type="fixed">
-        <parent link="world"/>
-        <child link="${link_prefix}base_footprint"/>
-        <origin xyz="0.0 0.0 0"/>
-      </joint>
     </xacro:if>
 
     <!-- rocker ODE properties -->
@@ -414,6 +400,33 @@
       <actuator name="rocker_R_virtual_motor"/>
     </transmission>
 
+  </xacro:macro>
+
+  <xacro:macro name="leo_sim" 
+               params="default_antenna:=true 
+                       fixed:=false
+                       robot_ns:=''">
+
+    <xacro:property name="link_prefix" value=""/>
+    <xacro:if value="${robot_ns != '' and robot_ns != '/'}">
+      <xacro:property name="link_prefix" value="${robot_ns}/"/>
+    </xacro:if>
+
+    <xacro:leo default_antenna="${default_antenna}"
+               rockers_fixed="false"
+               link_prefix="${link_prefix}"/>
+
+    <xacro:leo_gazebo robot_ns="${robot_ns}"/>
+
+    <xacro:if value="${fixed}">
+      <link name="world"/>
+      <joint name="fixed" type="fixed">
+        <parent link="world"/>
+        <child link="${link_prefix}base_footprint"/>
+        <origin xyz="0.0 0.0 0"/>
+      </joint>
+    </xacro:if>
+  
   </xacro:macro>
 
 </robot>
