@@ -2,6 +2,10 @@
 Changelog for package leo_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add footprint_link parameter to <leo/> macro
+
 1.2.0 (2020-12-18)
 ------------------
 * Add macros.xacro file which contains <leo/>, <leo_gazebo/> and <leo_sim/> xacro macros
