@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<package format="2">
+<package format="3">
   <name>leo</name>
   <version>1.2.1</version>
   <description>
@@ -15,12 +15,13 @@
   <url type="bugtracker">https://github.com/LeoRover/leo_common/issues</url>
   <url type="repository">https://github.com/LeoRover/leo_common</url>
 
-  <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>ament_cmake</buildtool_depend>
 
   <exec_depend>leo_description</exec_depend>
   <exec_depend>leo_teleop</exec_depend>
 
   <export>
-    <metapackage />
+    <build_type>ament_cmake</build_type>
+    <architecture_independent/>
   </export>
 </package>
