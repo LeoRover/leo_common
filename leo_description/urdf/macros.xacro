@@ -181,7 +181,7 @@
     </joint>
 
     <joint name="${joint_prefix}wheel_FR_joint" type="continuous">
-      <origin xyz="-0.15256 -0.08214 -0.08802" rpy="0 0 0"/>
+      <origin xyz="0.15256 -0.08214 -0.08802" rpy="0 0 0"/>
       <parent link="${link_prefix}rocker_R_link"/>
       <child link="${link_prefix}wheel_FR_link"/>
       <axis xyz="0 1 0"/>
@@ -190,7 +190,7 @@
     </joint>
 
     <joint name="${joint_prefix}wheel_RR_joint" type="continuous">
-      <origin xyz="0.15256 -0.08214 -0.08802" rpy="0 0 0"/>
+      <origin xyz="-0.15256 -0.08214 -0.08802" rpy="0 0 0"/>
       <parent link="${link_prefix}rocker_R_link"/>
       <child link="${link_prefix}wheel_RR_link"/>
       <axis xyz="0 1 0"/>
