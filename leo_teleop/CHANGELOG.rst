@@ -2,6 +2,12 @@
 Changelog for package leo_teleop
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add key_teleop.launch which starts the key teleop node in xterm
+* use exec in key_teleop script to not spawn another process
+* Update author and maintainer info
+
 1.2.1 (2020-12-18)
 ------------------
 

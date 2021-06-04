@@ -2,6 +2,11 @@
 Changelog for package leo_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Fix swapped FR and RR wheels
+* Update author and maintainer info
+
 1.2.1 (2020-12-18)
 ------------------
 * Add footprint_link parameter to <leo/> macro
