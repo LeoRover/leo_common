@@ -12,7 +12,7 @@ def generate_launch_description():
         [
             DeclareLaunchArgument(
                 name="model",
-                default_value=pkg_share + "/urdf/leo.urdf.xacro",
+                default_value=[pkg_share, "/urdf/leo.urdf.xacro"],
                 description="Absolute path to robot urdf.xacro file",
             ),
             Node(
