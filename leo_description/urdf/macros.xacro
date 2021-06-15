@@ -282,7 +282,7 @@
 
     <!-- camera -->
     <gazebo reference="${link_prefix}camera_frame">
-      <sensor type="camera" name="leo_camera">
+      <sensor type="camera" name="camera">
         <always_on>true</always_on>
         <update_rate>30.0</update_rate>
         <visualize>false</visualize> 
@@ -312,16 +312,8 @@
           </distortion>
         </camera>
         <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
-          <robotNamespace>${robot_ns}</robotNamespace>
-          <cameraName>camera</cameraName>
-          <imageTopicName>image_raw</imageTopicName>
-          <cameraInfoTopicName>camera_info</cameraInfoTopicName>
-          <frameName>camera_optical_frame</frameName>
-          <distortionK1>-0.279817</distortionK1>
-          <distortionK2>0.060321</distortionK2>
-          <distortionK3>0.000487</distortionK3>
-          <distortionT1>0.000310</distortionT1>
-          <distortionT2>0.000000</distortionT2>
+          <ros><namespace>${robot_ns}</namespace></ros>
+          <frame_name>camera_optical_frame</frame_name>
         </plugin>
       </sensor>
     </gazebo>
@@ -332,6 +324,19 @@
         <jointA>rocker_L_joint</jointA>
         <jointB>rocker_R_joint</jointB>
         <forceConstant>100.0</forceConstant>
+      </plugin>
+    </gazebo>
+
+    <!-- joint state publisher -->
+    <gazebo>
+      <plugin name="joint_state_publisher" filename="libgazebo_ros_joint_state_publisher.so">
+        <update_rate>20</update_rate>
+        <joint_name>rocker_L_joint</joint_name>
+        <joint_name>rocker_R_joint</joint_name>
+        <joint_name>wheel_FL_joint</joint_name>
+        <joint_name>wheel_RL_joint</joint_name>
+        <joint_name>wheel_FR_joint</joint_name>
+        <joint_name>wheel_RR_joint</joint_name>
       </plugin>
     </gazebo>
 
