@@ -327,16 +327,59 @@
       </plugin>
     </gazebo>
 
-    <!-- joint state publisher -->
+    <ros2_control name="GazeboSystem" type="system">
+      <hardware>
+        <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+      </hardware>
+      <joint name="rocker_L_joint">
+        <state_interface name="position"/>
+      </joint>
+      <joint name="rocker_R_joint">
+        <state_interface name="position"/>
+      </joint>
+      <joint name="wheel_FL_joint">
+        <command_interface name="effort">
+          <param name="min">-1000</param>
+          <param name="max">1000</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+      <joint name="wheel_RL_joint">
+        <command_interface name="effort">
+          <param name="min">-1000</param>
+          <param name="max">1000</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+      <joint name="wheel_FR_joint">
+        <command_interface name="effort">
+          <param name="min">-1000</param>
+          <param name="max">1000</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+      <joint name="wheel_RR_joint">
+        <command_interface name="effort">
+          <param name="min">-1000</param>
+          <param name="max">1000</param>
+        </command_interface>
+        <state_interface name="position"/>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+    </ros2_control>
+
     <gazebo>
-      <plugin name="joint_state_publisher" filename="libgazebo_ros_joint_state_publisher.so">
-        <update_rate>20</update_rate>
-        <joint_name>rocker_L_joint</joint_name>
-        <joint_name>rocker_R_joint</joint_name>
-        <joint_name>wheel_FL_joint</joint_name>
-        <joint_name>wheel_RL_joint</joint_name>
-        <joint_name>wheel_FR_joint</joint_name>
-        <joint_name>wheel_RR_joint</joint_name>
+      <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
+        <robot_param>robot_description</robot_param>
+        <robot_param_node>robot_state_publisher</robot_param_node>
+        <parameters>package://leo_description/config/controllers.yaml</parameters>
       </plugin>
     </gazebo>
 
