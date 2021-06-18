@@ -338,36 +338,36 @@
         <state_interface name="position"/>
       </joint>
       <joint name="wheel_FL_joint">
-        <command_interface name="effort">
-          <param name="min">-1000</param>
-          <param name="max">1000</param>
+        <command_interface name="velocity">
+          <param name="min">-6</param>
+          <param name="max">6</param>
         </command_interface>
         <state_interface name="position"/>
         <state_interface name="velocity"/>
         <state_interface name="effort"/>
       </joint>
       <joint name="wheel_RL_joint">
-        <command_interface name="effort">
-          <param name="min">-1000</param>
-          <param name="max">1000</param>
+        <command_interface name="velocity">
+          <param name="min">-6</param>
+          <param name="max">6</param>
         </command_interface>
         <state_interface name="position"/>
         <state_interface name="velocity"/>
         <state_interface name="effort"/>
       </joint>
       <joint name="wheel_FR_joint">
-        <command_interface name="effort">
-          <param name="min">-1000</param>
-          <param name="max">1000</param>
+        <command_interface name="velocity">
+          <param name="min">-6</param>
+          <param name="max">6</param>
         </command_interface>
         <state_interface name="position"/>
         <state_interface name="velocity"/>
         <state_interface name="effort"/>
       </joint>
       <joint name="wheel_RR_joint">
-        <command_interface name="effort">
-          <param name="min">-1000</param>
-          <param name="max">1000</param>
+        <command_interface name="velocity">
+          <param name="min">-6</param>
+          <param name="max">6</param>
         </command_interface>
         <state_interface name="position"/>
         <state_interface name="velocity"/>
@@ -406,7 +406,7 @@
       <joint name="fixed" type="fixed">
         <parent link="world"/>
         <child link="${link_prefix}base_footprint"/>
-        <origin xyz="0.0 0.0 0"/>
+        <origin xyz="0.0 0.0 1.0"/>
       </joint>
     </xacro:if>
   
