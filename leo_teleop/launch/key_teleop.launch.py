@@ -1,10 +1,17 @@
 from launch import LaunchDescription
 from launch_ros.actions import Node
+from launch.actions import DeclareLaunchArgument
+from launch.substitutions import LaunchConfiguration
 
 
 def generate_launch_description():
     return LaunchDescription(
         [
+            DeclareLaunchArgument(
+                name="cmd_vel_out",
+                default_value="cmd_vel",
+                description="Topic to send velocity commands on",
+            ),
             Node(
                 name="key_teleop",
                 package="teleop_twist_keyboard",
@@ -19,6 +26,7 @@ def generate_launch_description():
                         "key_timeout": 0.3,
                     }
                 ],
+                remappings={"cmd_vel": LaunchConfiguration("cmd_vel_out")}.items(),
             ),
         ]
     )
