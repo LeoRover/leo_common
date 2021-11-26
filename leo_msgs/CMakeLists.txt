@@ -7,6 +7,8 @@ find_package(catkin REQUIRED COMPONENTS
 
 add_message_files(FILES
   Imu.msg
+  WheelOdom.msg
+  WheelStates.msg
 )
 
 generate_messages()
