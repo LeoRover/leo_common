@@ -1,3 +1,9 @@
+# This message holds the data retrieved from an Accel/Gyro+Temp IMU sensor
+#
+# The temperature field represents the temperature reported by the sensor in Degrees Celcius
+# The gyro_* fields represent the rotational velocity in rad/s
+# The accel_* fields represent the linear acceleration in m/s^2
+
 time stamp
 float32 temperature
 float32 gyro_x
