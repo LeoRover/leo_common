@@ -2,8 +2,8 @@
 Changelog for package leo_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.0 (2021-12-02)
+------------------
 * Add comments to the Imu and WheelOdom message definitions
 * Add pwm_duty_cycle field to WheelStates
 * Add WheelOdom and WheelStates messages
