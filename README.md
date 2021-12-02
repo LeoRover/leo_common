@@ -2,9 +2,9 @@
 
 | ROS Distribution: | Melodic | Noetic |
 |:---|:---:|:---:|
-| **Released version:** | [1.2.1] | [1.2.1] |
-| **Development branch:** | [master] | [master] | [master] |
-| **Build status:** | [![Build Status Melodic](http://build.ros.org/job/Mdev__leo_common__ubuntu_bionic_amd64/badge/icon)](http://build.ros.org/job/Mdev__leo_common__ubuntu_bionic_amd64/) | [![Build Status](http://build.ros.org/job/Ndev__leo_common__ubuntu_focal_amd64/badge/icon)](http://build.ros.org/job/Ndev__leo_common__ubuntu_focal_amd64/) <br> [![Build Status](http://build.ros.org/job/Ndev_db__leo_common__debian_buster_amd64/badge/icon)](http://build.ros.org/job/Ndev_db__leo_common__debian_buster_amd64/)|
+| **Released version:** | [1.2.2] | [1.2.2] |
+| **Development branch:** | [melodic] | [master] |
+| **Build status:** | [![Build Status](http://build.ros.org/job/Mdev__leo_common__ubuntu_bionic_amd64/badge/icon)](http://build.ros.org/job/Mdev__leo_common__ubuntu_bionic_amd64/) | [![Build Status](http://build.ros.org/job/Ndev__leo_common__ubuntu_focal_amd64/badge/icon)](http://build.ros.org/job/Ndev__leo_common__ubuntu_focal_amd64/) <br> [![Build Status](http://build.ros.org/job/Ndev_db__leo_common__debian_buster_amd64/badge/icon)](http://build.ros.org/job/Ndev_db__leo_common__debian_buster_amd64/)|
 
 Common ROS packages for Leo Rover that will work no matter on what machine they were run in the ROS network. Usable for both the real robot operation and the simulation.
 
@@ -19,5 +19,6 @@ For more information about the robot, visit [Robots/Leo Rover].
 [leo_description]: http://wiki.ros.org/leo_description
 [leo_teleop]: http://wiki.ros.org/leo_teleop
 [Robots/Leo Rover]: http://wiki.ros.org/Robots/Leo%20Rover
-[1.2.1]: https://github.com/LeoRover/leo_common/tree/1.2.1
+[1.2.2]: https://github.com/LeoRover/leo_common/tree/1.2.2
+[melodic]: https://github.com/LeoRover/leo_common/tree/melodic
 [master]: https://github.com/LeoRover/leo_common/tree/master
