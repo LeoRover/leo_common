@@ -2,6 +2,9 @@
 Changelog for package leo_teleop
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 1.2.2 (2021-06-04)
 ------------------
 * Add key_teleop.launch which starts the key teleop node in xterm

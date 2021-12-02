@@ -2,6 +2,10 @@
 Changelog for package leo
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add leo_msgs to leo metapackage dependencies
+
 1.2.2 (2021-06-04)
 ------------------
 * Update author and maintainer info
