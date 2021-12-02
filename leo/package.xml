@@ -18,6 +18,7 @@
   <buildtool_depend>catkin</buildtool_depend>
 
   <exec_depend>leo_description</exec_depend>
+  <exec_depend>leo_msgs</exec_depend>
   <exec_depend>leo_teleop</exec_depend>
 
   <export>
