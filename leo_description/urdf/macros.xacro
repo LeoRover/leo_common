@@ -6,7 +6,8 @@
                        rockers_fixed:=true
                        footprint_link:=true
                        link_prefix:=''
-                       joint_prefix:=''">
+                       joint_prefix:=''
+                       imu_translation:='0.0628 -0.0314 -0.0393'">
 
     <xacro:macro name="rocker_link" params="name">
       <link name="${link_prefix}rocker_${name}_link">
@@ -125,6 +126,7 @@
 
     <link name="${link_prefix}camera_frame"/>
     <link name="${link_prefix}camera_optical_frame"/>
+    <link name="${link_prefix}imu_frame"/>
 
     <!-- JOINTS -->
 
@@ -216,6 +218,12 @@
       <origin xyz="0 0 0" rpy="-${pi/2} 0.0 -${pi/2}"/>
       <parent link="${link_prefix}camera_frame"/>
       <child link="${link_prefix}camera_optical_frame"/>
+    </joint>
+
+    <joint name="${joint_prefix}imu_joint" type="fixed">
+      <origin xyz="${imu_translation}" rpy="0 0 0"/>
+      <parent link="${link_prefix}base_link"/>
+      <child link="${link_prefix}imu_frame"/>
     </joint>
 
   </xacro:macro>
