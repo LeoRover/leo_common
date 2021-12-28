@@ -2,8 +2,8 @@
 Changelog for package leo_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.0.1 (2021-12-28)
+------------------
 * Add imu_frame link and imu_translation parameter
 
 2.0.0 (2021-12-02)
