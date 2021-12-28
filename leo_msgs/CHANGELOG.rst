@@ -2,6 +2,9 @@
 Changelog for package leo_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 2.0.0 (2021-12-02)
 ------------------
 * Add comments to the Imu and WheelOdom message definitions
