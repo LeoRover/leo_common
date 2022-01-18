@@ -3,6 +3,7 @@ project(leo_msgs)
 
 find_package(catkin REQUIRED COMPONENTS
   message_generation
+  std_msgs
 )
 
 add_message_files(FILES
@@ -14,5 +15,7 @@ add_message_files(FILES
 generate_messages()
 
 catkin_package(
-  CATKIN_DEPENDS message_runtime
+  CATKIN_DEPENDS
+    message_runtime
+    std_msgs
 )
