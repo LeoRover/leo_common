@@ -2,6 +2,10 @@
 Changelog for package leo_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Fix catkin_lint errors
+
 2.0.1 (2021-12-28)
 ------------------
 
