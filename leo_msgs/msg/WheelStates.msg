@@ -1,8 +1,8 @@
 # This message describes the states of the wheels in Leo Rover
 #
 # The state of each wheel is defined by:
-#  * the position of the wheel (rad or m),
-#  * the velocity of the wheel (rad/s or m/s)
+#  * the position of the wheel (rad),
+#  * the velocity of the wheel (rad/s)
 #  * the torque that is applied in the wheel (Nm)
 #  * the PWM Duty cycle (%)
 #
