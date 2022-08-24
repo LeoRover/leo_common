@@ -12,6 +12,10 @@ add_message_files(FILES
   WheelStates.msg
 )
 
+add_service_files(FILES
+  SetImuCalibration.srv
+)
+
 generate_messages()
 
 catkin_package(
