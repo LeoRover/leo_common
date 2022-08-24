@@ -2,6 +2,9 @@
 Changelog for package leo_teleop
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 2.1.0 (2022-01-31)
 ------------------
 * Fix catkin_lint errors

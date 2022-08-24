@@ -2,6 +2,9 @@
 Changelog for package leo_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 2.1.0 (2022-01-31)
 ------------------
 * Add simulated imu sensor
