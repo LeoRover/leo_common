@@ -2,7 +2,7 @@
 
 | ROS Distribution: | Melodic | Noetic |
 |:---|:---:|:---:|
-| **Released version:** | [1.2.2] | [2.1.0] |
+| **Released version:** | [1.2.2] | [2.2.0] |
 | **Development branch:** | [melodic] | [master] |
 | **Build status:** | [![Build Status](http://build.ros.org/job/Mdev__leo_common__ubuntu_bionic_amd64/badge/icon)](http://build.ros.org/job/Mdev__leo_common__ubuntu_bionic_amd64/) | [![Build Status](http://build.ros.org/job/Ndev__leo_common__ubuntu_focal_amd64/badge/icon)](http://build.ros.org/job/Ndev__leo_common__ubuntu_focal_amd64/) <br> [![Build Status](http://build.ros.org/job/Ndev_db__leo_common__debian_buster_amd64/badge/icon)](http://build.ros.org/job/Ndev_db__leo_common__debian_buster_amd64/)|
 
@@ -22,6 +22,6 @@ For more information about the robot, visit [Robots/Leo Rover].
 [leo_teleop]: http://wiki.ros.org/leo_teleop
 [Robots/Leo Rover]: http://wiki.ros.org/Robots/Leo%20Rover
 [1.2.2]: https://github.com/LeoRover/leo_common/tree/1.2.2
-[2.1.0]: https://github.com/LeoRover/leo_common/tree/2.1.0
+[2.2.0]: https://github.com/LeoRover/leo_common/tree/2.2.0
 [melodic]: https://github.com/LeoRover/leo_common/tree/melodic
 [master]: https://github.com/LeoRover/leo_common/tree/master
