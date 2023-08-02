@@ -9,6 +9,7 @@ find_package(catkin REQUIRED COMPONENTS
 add_message_files(FILES
   Imu.msg
   WheelOdom.msg
+  WheelOdomMecanum.msg
   WheelStates.msg
 )
 
