@@ -10,7 +10,7 @@
     <param name="autorepeat_rate" value="10.0"/>
   </node>
 
-  <node name="joy_teleop_node" pkg="teleop_twist_joy" type="teleop_node">
+  <node name="joy_teleop_node" pkg="teleop_twist_joy" type="teleop_node" clear_params="true">
     <rosparam command="load" file="$(arg joy_config_file)"/>
     <remap from="cmd_vel" to="$(arg cmd_vel_out)"/>
   </node>
