@@ -2,8 +2,8 @@
 Changelog for package leo_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.3.0 (2023-10-30)
+------------------
 * Add mecanum wheels to description package (`#5 <https://github.com/LeoRover/leo_common/issues/5>`_)
 * Contributors: Aleksander Szymański
 

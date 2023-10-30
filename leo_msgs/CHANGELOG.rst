@@ -2,8 +2,8 @@
 Changelog for package leo_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+2.3.0 (2023-10-30)
+------------------
 * Add WheelOdomMecanum message type (`#3 <https://github.com/LeoRover/leo_common/issues/3>`_)
 * Contributors: Aleksander Szymański
 
