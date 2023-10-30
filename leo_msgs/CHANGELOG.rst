@@ -2,6 +2,11 @@
 Changelog for package leo_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Add WheelOdomMecanum message type (`#3 <https://github.com/LeoRover/leo_common/issues/3>`_)
+* Contributors: Aleksander Szymański
+
 2.2.0 (2022-08-24)
 ------------------
 * Add service definition for setting IMU calibration (`#2 <https://github.com/LeoRover/leo_common/issues/2>`_)

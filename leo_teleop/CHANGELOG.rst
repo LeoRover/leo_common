@@ -2,6 +2,11 @@
 Changelog for package leo_teleop
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Expand joy teleop config to support the mecanum wheels (`#4 <https://github.com/LeoRover/leo_common/issues/4>`_)
+* Contributors: Aleksander Szymański
+
 2.2.0 (2022-08-24)
 ------------------
 
