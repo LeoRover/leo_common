@@ -7,7 +7,8 @@
                        footprint_link:=true
                        link_prefix:=''
                        joint_prefix:=''
-                       imu_translation:='0.0628 -0.0314 -0.0393'">
+                       imu_translation:='0.0628 -0.0314 -0.0393'
+                       mecanum_wheels:=false">
 
     <xacro:macro name="rocker_link" params="name">
       <link name="${link_prefix}rocker_${name}_link">
@@ -67,6 +68,35 @@
       </link>
     </xacro:macro>
 
+    <xacro:macro name="mecanum_wheel_link" params="name model"> 
+      <link name="${link_prefix}wheel_${name}_link">
+        <inertial>
+          <mass value="0.672214"/>
+          <origin xyz="0 -0.036852 0"/>
+          <inertia
+            ixx="0.0009778"  ixy="-8.10228e-7" ixz="3.2e-11"
+            iyy="0.001321" iyz="5.7e-11"
+            izz="0.0009773"/>
+        </inertial>
+        <visual>
+          <geometry>
+            <mesh filename="package://leo_description/models/WheelMecanum${model}.dae"/>
+          </geometry>
+        </visual>
+        <collision>
+          <origin xyz="0 -0.0317 0" rpy="${pi/2} 0 0"/>
+          <geometry>
+            <cylinder radius="0.0635" length="0.0515"/>
+          </geometry>
+        </collision>
+        <collision>
+          <geometry>
+            <mesh filename="package://leo_description/models/Mecanum_wheel_outline.stl"/>
+          </geometry>
+        </collision>
+      </link>
+    </xacro:macro>
+
     <!-- LINKS -->
     <xacro:if value="${footprint_link}">
       <link name="${link_prefix}base_footprint"/>
@@ -95,10 +125,18 @@
 
     <xacro:rocker_link name="L"/>
     <xacro:rocker_link name="R"/>
-    <xacro:wheel_link name="FL" model="A"/>
-    <xacro:wheel_link name="RL" model="A"/>
-    <xacro:wheel_link name="FR" model="B"/>
-    <xacro:wheel_link name="RR" model="B"/>
+    <xacro:if value="${mecanum_wheels}">
+      <xacro:mecanum_wheel_link name="FL" model="B"/>
+      <xacro:mecanum_wheel_link name="RL" model="A"/>
+      <xacro:mecanum_wheel_link name="FR" model="A"/>
+      <xacro:mecanum_wheel_link name="RR" model="B"/>
+    </xacro:if>
+    <xacro:unless value="${mecanum_wheels}">
+      <xacro:wheel_link name="FL" model="A"/>
+      <xacro:wheel_link name="RL" model="A"/>
+      <xacro:wheel_link name="FR" model="B"/>
+      <xacro:wheel_link name="RR" model="B"/>
+    </xacro:unless>
 
     <xacro:if value="${default_antenna}">
       <link name="${link_prefix}antenna_link">
@@ -165,7 +203,12 @@
     </joint>
 
     <joint name="${joint_prefix}wheel_FL_joint" type="continuous">
-      <origin xyz="-0.15256 -0.08214 -0.08802" rpy="0 0 0"/>
+      <xacro:if value="${mecanum_wheels}">
+        <origin xyz="-0.15256 -0.00884 -0.08802" rpy="0 0 0"/>
+      </xacro:if>
+      <xacro:unless value="${mecanum_wheels}">
+        <origin xyz="-0.15256 -0.08214 -0.08802" rpy="0 0 0"/>
+      </xacro:unless>
       <parent link="${link_prefix}rocker_L_link"/>
       <child link="${link_prefix}wheel_FL_link"/>
       <axis xyz="0 -1 0"/>
@@ -174,7 +217,12 @@
     </joint>
 
     <joint name="${joint_prefix}wheel_RL_joint" type="continuous">
-      <origin xyz="0.15256 -0.08214 -0.08802" rpy="0 0 0"/>
+      <xacro:if value="${mecanum_wheels}">
+        <origin xyz="0.15256 -0.00884 -0.08802" rpy="0 0 0"/>
+      </xacro:if>      
+      <xacro:unless value="${mecanum_wheels}">
+        <origin xyz="0.15256 -0.08214 -0.08802" rpy="0 0 0"/>
+      </xacro:unless>
       <parent link="${link_prefix}rocker_L_link"/>
       <child link="${link_prefix}wheel_RL_link"/>
       <axis xyz="0 -1 0"/>
@@ -183,7 +231,12 @@
     </joint>
 
     <joint name="${joint_prefix}wheel_FR_joint" type="continuous">
-      <origin xyz="0.15256 -0.08214 -0.08802" rpy="0 0 0"/>
+      <xacro:if value="${mecanum_wheels}">
+        <origin xyz="0.15256 -0.00884 -0.08802" rpy="0 0 0"/>
+      </xacro:if>
+      <xacro:unless value="${mecanum_wheels}">
+        <origin xyz="0.15256 -0.08214 -0.08802" rpy="0 0 0"/>
+      </xacro:unless>
       <parent link="${link_prefix}rocker_R_link"/>
       <child link="${link_prefix}wheel_FR_link"/>
       <axis xyz="0 1 0"/>
@@ -192,7 +245,12 @@
     </joint>
 
     <joint name="${joint_prefix}wheel_RR_joint" type="continuous">
-      <origin xyz="-0.15256 -0.08214 -0.08802" rpy="0 0 0"/>
+      <xacro:if value="${mecanum_wheels}">
+        <origin xyz="-0.15256 -0.00884 -0.08802" rpy="0 0 0"/>
+      </xacro:if>
+      <xacro:unless value="${mecanum_wheels}">
+        <origin xyz="-0.15256 -0.08214 -0.08802" rpy="0 0 0"/>
+      </xacro:unless>
       <parent link="${link_prefix}rocker_R_link"/>
       <child link="${link_prefix}wheel_RR_link"/>
       <axis xyz="0 1 0"/>
@@ -450,7 +508,8 @@
   <xacro:macro name="leo_sim" 
                params="default_antenna:=true 
                        fixed:=false
-                       robot_ns:=''">
+                       robot_ns:=''
+                       mecanum_wheels:=false">
 
     <xacro:property name="link_prefix" value=""/>
     <xacro:if value="${robot_ns != '' and robot_ns != '/'}">
@@ -459,7 +518,8 @@
 
     <xacro:leo default_antenna="${default_antenna}"
                rockers_fixed="false"
-               link_prefix="${link_prefix}"/>
+               link_prefix="${link_prefix}"
+               mecanum_wheels="${mecanum_wheels}"/>
 
     <xacro:leo_gazebo robot_ns="${robot_ns}"/>
 
