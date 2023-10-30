@@ -508,7 +508,8 @@
   <xacro:macro name="leo_sim" 
                params="default_antenna:=true 
                        fixed:=false
-                       robot_ns:=''">
+                       robot_ns:=''
+                       mecanum_wheels:=false">
 
     <xacro:property name="link_prefix" value=""/>
     <xacro:if value="${robot_ns != '' and robot_ns != '/'}">
@@ -517,7 +518,8 @@
 
     <xacro:leo default_antenna="${default_antenna}"
                rockers_fixed="false"
-               link_prefix="${link_prefix}"/>
+               link_prefix="${link_prefix}"
+               mecanum_wheels="${mecanum_wheels}"/>
 
     <xacro:leo_gazebo robot_ns="${robot_ns}"/>
 
