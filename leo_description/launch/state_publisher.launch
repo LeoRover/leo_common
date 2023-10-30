@@ -1,6 +1,10 @@
 <launch>
 
-  <include file="$(find leo_description)/launch/description.launch"/>
+  <arg name="mecanum_wheels" default="false"/>
+  
+  <include file="$(find leo_description)/launch/description.launch">
+    <param name="mecanum_wheels" value="$(arg mecanum_wheels)"/>
+  </include>
 
   <node name="robot_state_publisher"
         pkg="robot_state_publisher"
